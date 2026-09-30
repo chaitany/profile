@@ -1,78 +1,41 @@
-# React + TypeScript + Vite
+# Chaitanya Reddy Vaddula — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 18 + TypeScript + Vite. A block robot walks visitors through About (living room),
+Experience (office, via a commute) and Projects (home office).
 
-Currently, two official plugins are available:
+## Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Requires Node.js 20.19+ or 22.12+ (Vite 8).
 
-## React Compiler
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # type-checks with tsc, then builds to dist/
+npm run preview    # serves the production build
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Structure
 
 ```
+index.html                 SEO + Open Graph tags (replace chaitanyavaddula.dev with your domain)
+public/                    sketched scenes (room, office, door, house, home) and og-image.png
+src/
+  main.tsx                 entry point
+  App.tsx                  layout + scene state machine (living -> office -> home)
+  styles.css               all styling and robot pose animations
+  types.ts                 shared types (PageId, Place, Pose, Job, Project, ...)
+  data/content.ts          resume content, projects and the robot's highlight lines
+  lib/motion.ts            reduced-motion flag, hash routing, timers, seeded random
+  components/
+    Robot.tsx              the block robot SVG (poses are CSS classes)
+    RoamingRobot.tsx       walks around a scene and says highlights
+    Commute.tsx            hand-drawn road + walking to a door
+    Intro.tsx              peek, duck out, pull the living room in
+    Nav.tsx                sliding pill navigation
+    Contacts.tsx           email / LinkedIn / GitHub pill
+  pages/
+    About.tsx  Experience.tsx  Projects.tsx
+```
+
+To change text, edit `src/data/content.ts`; everything else reads from it.
