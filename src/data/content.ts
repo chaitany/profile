@@ -18,7 +18,7 @@ export const SUMMARY ="Software Engineer with 11 years of experience designing a
 export const SKILLS: SkillGroup[] = [
   {
     group: "Frontend",
-    items: ["React.js", "TypeScript", "Next.js", "JavaScript (ES6+)", "Node.js", "Redux", "TanStack Query", "HTML5", "CSS", "Tailwind CSS", "styled-components", "WebSockets", "Design Systems", "Figma", "Microfrontend", "Sitecore XMC"],
+    items: ["React.js", "TypeScript", "Next.js", "JavaScript (ES6+)", "Node.js", "Redux", "TanStack Query", "HTML5", "CSS", "Tailwind CSS", "styled-components", "WebSockets", "Design Systems", "Figma", "Microfrontend", "Sitecore XMC", "AEM"],
   },
   {
     group: "Backend and data",
