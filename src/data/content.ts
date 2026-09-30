@@ -13,7 +13,7 @@ export const PAGES: PageLink[] = [
   { id: "projects", label: "Projects" },
 ];
 
-export const SUMMARY ="Software Engineer with 11 years of experience designing and scaling high-traffic SaaS and ecommerce web applications using React, Next.js, Node.js, Python, and AWS, now extending products with LLMs, AI agents, and MCP servers. Proven track record of leading engineering teams through RFC-driven technical decisions, scaling real-time platforms to 1,000 users per second and building an AI research agent that reduced audit time by 60%."
+export const SUMMARY ="Software Engineer with 11 years of experience designing and scaling high-traffic SaaS and ecommerce applications using React, TypeScript, Node.js, Python, and AWS, now extending products with LLMs, AI agents, and MCP servers. Proven track record of leading engineering teams through RFC-driven technical decisions, scaling real-time platforms to 1,000 users per second and building an AI research agent that reduced audit time by 60%."
 
 export const SKILLS: SkillGroup[] = [
   {
