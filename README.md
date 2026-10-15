@@ -1,3 +1,3 @@
 # Chaitanya Reddy Vaddula — Portfolio
 
-https://github.io/chaitany/profile
+https://chaitany.github.io/profile/
